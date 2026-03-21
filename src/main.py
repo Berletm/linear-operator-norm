@@ -11,7 +11,7 @@ OPERATOR = np.array([
 
 def main() -> None:
     # l1 norm
-    print(np.linalg.norm(OPERATOR, ord=1))
+    print("Норма в l1", np.linalg.norm(OPERATOR, ord=1))
     
 if __name__ == "__main__":
     main()

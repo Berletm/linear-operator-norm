@@ -1,6 +1,6 @@
 \documentclass[a4paper]{article}
 \usepackage[russian]{babel}
-\usepackage[left=2cm, right=2cm, top=1cm, bottom=1cm]{geometry}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \hypersetup{
@@ -14,7 +14,12 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{bookmark}
+\usepackage[skins]{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{amsthm}
 
+\newcommand{\nicecolor}{blue!50!violet!50}
+\newtheorem{definition}{Определение}
 
 \author{Берлет Максим гр. 3384}
 \title{Домашняя работа 2. \\ Операторная норма.}
@@ -29,27 +34,54 @@
 \pagebreak
 
 \section{Условие}
+\begin{tcolorbox}[title=Условие задания, colframe=\nicecolor, fonttitle=\bfseries]
+    Линейный оператор $\mathcal{A} : \mathbb{R}^4 \rightarrow \mathbb{R}^4$ задан матрицей $A \in \mathbb{R}_{4x4}$ \\
+    Требуется вычислить:
+        \begin{itemize}
+            \item норму оператора $\mathcal{A}$ в пространствах $l_{4}^{1}$, $l_{4}^{\infty}$ и предъявить векторы, на которых достигается норма.
+            \item норму оператора $\mathcal{A}^{-1}$ в пространствах $l_{4}^{1}$, $l_{4}^{\infty}$ и предъявить векторы, на которых достигается норма.
+            \item число обусловленности $\mu(A)$ оператора в пространствах $l_{4}^{1}$, $l_{4}^{\infty}$.
+            \item показать, что матрица $G = A^{*}A$ положительно определенная и найти её собственные числа и собственны вектора.
+            \item норму оператора $\mathcal{A}$ в пространстве $l_{4}^{2}$.
+        \end{itemize}
+    Задание на пятерку: 
+    \begin{itemize}
+        \item решить систему $Ax = b$ методом итераций.
+        \item сравнить результат с точным решением.
+    \end{itemize}
+\end{tcolorbox}
+\pagebreak
 
 \section{Норма оператора \texorpdfstring{$A$}{}}
+
+\begin{definition}
+    Норма линейного оператора $\mathcal{A}$    
+\end{definition}
+
 \subsection{Норма в \texorpdfstring{$l_{4}^{1}$}{}}
 \subsection{Норма в \texorpdfstring{$l_{4}^{\infty}$}{}}
+\pagebreak
 
 \section{Норма оператора \texorpdfstring{$A^{-1}$}{}}
 \subsection{Норма в \texorpdfstring{$l_{4}^{1}$}{}}
 \subsection{Норма в \texorpdfstring{$l_{4}^{\infty}$}{}}
+\pagebreak
 
 \section{Число обусловленности оператора \texorpdfstring{$A$}{}}
 \subsection{\texorpdfstring{$\mu(A)$}{} в \texorpdfstring{$l_{4}^{1}$}{}}
 \subsection{\texorpdfstring{$\mu(A)$}{} в \texorpdfstring{$l_{4}^{\infty}$}{}}
+\pagebreak
 
 \section{Норма оператора \texorpdfstring{$A$}{} в \texorpdfstring{$l_{4}^{2}$}{}}
 \subsection{Положительная определенность матрицы \texorpdfstring{$G = A^{*}A$}{}}
 \subsection{\texorpdfstring{$\mu(A)$}{} в \texorpdfstring{$l_{4}^{2}$}{}}
+\pagebreak
 
 \section{Задание на пятерку}
 \subsection{Описание метода итераций}
 \subsection{Результат применения метода}
 \subsection{Точное решение системы и сравнение с итеративным}
+\pagebreak
 
 \section{Вывод}
 
