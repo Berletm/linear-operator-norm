@@ -19,6 +19,7 @@
 \usepackage{amsthm}
 
 \newcommand{\nicecolor}{blue!50!violet!50}
+\newcommand{\norm}[1]{\left \lVert #1 \right \rVert}
 \newtheorem{definition}{Определение}
 
 \author{Берлет Максим гр. 3384}
@@ -54,9 +55,19 @@
 
 \section{Норма оператора \texorpdfstring{$A$}{}}
 
-\begin{definition}
-    Норма линейного оператора $\mathcal{A}$    
+\begin{definition} 
+    Нормой линейного оператора $\mathcal{A}: X \rightarrow Y$ называется такое число \\ $\norm{\mathcal{A}} = sup\{\norm{ \mathcal{A} x}: \norm{x} \le 1\}$     
 \end{definition}
+
+Если говорить просто, то нормой оператора будет максимальный коэффициент растяжения пространства. Это легко проиллюстрировать на единичной окружности.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10cm]{utils/Figure_1.png}    
+    \caption{Изображение линейного преобразования}
+\end{figure}
+
+На левом графике изображена единичная окружность, на правом изображен эллипс, полученный с помощью применения некого линейного оператора к каждому вектору с левого графика.
+Кроме того, видно, что оператор растягивает вектора (увеличивает их длину) в доль одного наравления больше, чем вдоль другого, так норма этого оператора будет показывать самое большое растяжение единичного вектора.
 
 \subsection{Норма в \texorpdfstring{$l_{4}^{1}$}{}}
 \subsection{Норма в \texorpdfstring{$l_{4}^{\infty}$}{}}
