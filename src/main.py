@@ -54,8 +54,48 @@ def draw_operator() -> None:
 
 
 def main() -> None:
-    # l1 norm
-    print("Норма в l1", np.linalg.norm(OPERATOR, ord=1))
+    G = OPERATOR.T @ OPERATOR
+    G_inv = np.linalg.inv(G)
+    
+    b = np.array([1/2, 1/3, 1/4, 1/5])
+    x = np.array([1, 1, 1, 1])
+    iters = 10
+    
+    print(x_ := np.linalg.solve(np.eye(4) - G_inv, b))
+    print()
+    residuals = []
+    solutions = []
+    solutions.append(x)
+    residuals.append(b - (np.eye(4) - G_inv) @ x)
+    for _ in range(iters):
+        x = b + G_inv @ x
+        solutions.append(x)
+        residuals.append(b - (np.eye(4) - G_inv) @ x)
+    
+    res_len = [np.linalg.norm(res, ord=2) for res in residuals]
+    errors_ = [x_ - sol for sol in solutions]
+    errors_len = [np.linalg.norm(res, ord=2) for res in errors_]
+    
+    print(res_len)
+    print(errors_len)
+    
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+    # График невязок
+    ax1.semilogy(res_len, marker='o')
+    ax1.grid(True, which='both', alpha=0.3)
+    ax1.set_title("Норма невязки ||b - Ax|| vs итерация")  # ← исправлено
+    ax1.set_xlabel("Номер итерации")
+    ax1.set_ylabel("Евклидова норма")
+
+    # График погрешностей
+    ax2.semilogy(errors_len, marker='o', color='orange')
+    ax2.grid(True, which='both', alpha=0.3)
+    ax2.set_title("Норма погрешности ||x* - x|| vs итерация")  # ← исправлено
+    ax2.set_xlabel("Номер итерации")
+    ax2.set_ylabel("Евклидова норма")
+    
+    plt.tight_layout()  # чтобы заголовки и подписи не наезжали
+    plt.show()
         
 if __name__ == "__main__":
     main()
